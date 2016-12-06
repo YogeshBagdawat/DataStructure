@@ -138,6 +138,44 @@ public class LinkedList {
 	     temp.next=null;
 	    return remaining; 
 	}
+	//merge two sorted list
+	public LinkedList mergList(LinkedList list1,LinkedList list2){
+		LinkedList l1= new LinkedList();
+		Node temp3=l1.head;
+		
+		Node temp1 = list1.head;
+		Node temp2 = list2.head;
+		while(temp2!=null||temp1!=null){
+			if(temp1==null){
+				l1.append(temp2.data);
+				temp2=temp2.next;
+				
+			}
+			else if(temp2==null){
+				l1.append(temp1.data);
+				temp1=temp1.next;
+				
+			}
+			else
+			{
+				if(temp1.data<=temp2.data)
+				{
+					l1.append(temp1.data);
+					temp1=temp1.next;
+
+				}
+				else{
+					l1.append(temp2.data);
+					temp2=temp2.next;
+					
+				}
+					
+			}
+		}
+		
+		return l1;
+		
+	}
 	//display linked list
 	public void display(){
 		Node temp=head;
