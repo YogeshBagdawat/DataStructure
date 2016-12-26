@@ -192,6 +192,29 @@ public class LinkedList {
 		return l1.head;
 		
 	}
+	
+	//rotate a linkedlist counter clockwise
+	public void rotateListByKNode(int number){
+		int counter=0;
+		Node temp=head;
+		Node prev=head;
+		while(counter<number&&temp!=null){
+			temp=temp.next;
+			counter++;
+		}
+		if(temp==null)
+			return ;
+		
+		Node temp1=temp;
+		
+	    while(temp.next!=null){
+	    	temp=temp.next;
+	    }
+	    temp.next=head;
+	    head=temp1.next;
+	    temp1.next=null;
+	}
+	
 	//display linked list
 	public void display(){
 		Node temp=head;
