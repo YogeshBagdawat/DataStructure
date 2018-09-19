@@ -24,6 +24,16 @@ public class LinkedList {
 
 	}*/
 	//add element in first of list
+	
+	public void push1(int data){
+		Node first = new  Node(data);
+		//head=first;	
+
+		first.next=head;
+		head=first; 
+		count++;
+	}
+	
 	public void push(int data){
 		Node first = new  Node(data);
 		//head=first;	
