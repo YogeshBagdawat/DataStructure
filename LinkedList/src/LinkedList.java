@@ -33,6 +33,14 @@ public class LinkedList {
 		head=first; 
 		count++;
 	}
+	public void push2(int data){
+		Node first = new  Node(data);
+		//head=first;	
+
+		first.next=head;
+		head=first; 
+		count++;
+	}
 	
 	public void push(int data){
 		Node first = new  Node(data);
