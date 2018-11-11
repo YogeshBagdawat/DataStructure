@@ -1,14 +1,13 @@
 package com.yogi.ds.array;
 
-
 public class MaximumSumSubArray {
 
-	public int maxSumSubbArray(int[] a) {
+	public static int maxSumSubArrayKadanes(int[] a) {
 		int maxSoFar = 0;
 		int maxEndingHere = 0;
 
 		for (int i : a) {
-			maxEndingHere = maxEndingHere + a[i];
+			maxEndingHere = maxEndingHere + i;
 			if (maxSoFar < maxEndingHere) {
 				maxSoFar = maxEndingHere;
 			}
@@ -47,5 +46,10 @@ public class MaximumSumSubArray {
 			}
 		}
 		return leftSum + rightSum;
+	}
+
+	public static void main(String[] args) {
+		 int a[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+		 System.out.println(maxSumSubArrayKadanes(a));
 	}
 }
